@@ -1,9 +1,12 @@
-const mongoose = require('mongoose')
 const express = require('express')
+const path = require('path')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 const User = require('./model/user')
-const bcrypt = require('bcrypt')
-const app = express()
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
+const JWT_SECRET ='ksvdno@#%#Slkvandlgfaasdfasdf'
 
 mongoose.connect('mongodb://localhost:27017/UserDB', {
     useNewUrlParser:true,
@@ -11,102 +14,82 @@ mongoose.connect('mongodb://localhost:27017/UserDB', {
     useCreateIndex: true
 })
 
-const db = mongoose.connection
+const app = express()
+app.use('/', express.static(path.join(__dirname, 'static')))
+app.use(bodyParser.json())
 
-app.set('view engine','ejs')
-app.use(express.urlencoded({ extended:false }))
+app.post('/api/change-password', (req, res) =>{
+    const { token } = req.body
 
-app.get('/', (req, res) =>
-{
-    res.render('index.ejs', {name:'Kyle'})
+    jwt.verify(token.JWT_SECRET)
 })
 
-app.get('/login', (req, res) =>{
-    res.render('login.ejs')
-})
+app.post('/api/login', async (req, res,) => {
 
-app.get('/register', (req, res) =>{
-    res.render('register.ejs')
-})
+    const {username, password} = req.body
 
-
-app.post('/login', (req, res) =>
-{
-
-})
-
-app.post('/register', (req, res) =>
-{
-        const {name, email, password, password2} = req.body;
-
-        const errors = []
-
-
-       //edge case if no input
-       if( !name || !email || !password || !password2)
-       {
-           errors.push({msg: 'Please enter all fields'});
-       }
-        
-       if (password != password2) 
-        {
-            errors.push({ msg: 'Passwords do not match' });
-        }
-    
-        if (password.length < 6) 
-        {
-            errors.push({ msg: 'Password must be at least 6 characters' });
-        }
-
-        if (errors.length > 0) {
-            res.render('register', {
-              errors,
-              name,
-              email,
-              password,
-              password2
-            });
-          } else {
-            User.findOne({ email: email }).then(user => {
-              if (user) {
-                errors.push({ msg: 'Email already exists' });
-                res.render('register', {
-                  errors,
-                  name,
-                  email,
-                  password,
-                  password2
-                });
-              } else {
-                const newUser = new User({
-                  name,
-                  email,
-                  password
-                });
-        
-                bcrypt.genSalt(10, (err, salt) => {
-                  bcrypt.hash(newUser.password, salt, (err, hash) => {
-                    if (err) throw err;
-                    newUser.password = hash;
-                    newUser
-                      .save()
-                      .then(user => {
-                        req.flash(
-                          'success_msg',
-                          'You are now registered and can log in'
-                        );
-                        res.redirect('/users/login');
-                      })
-                      .catch(err => console.log(err));
-                  });
-                });
-              }
-            });
-          }
-
-       
+    const user = await User.findOne({username}).lean()
 
     
+    if(!user)
+    {
+        return res.json({ status: 'error', error: 'Invalid username/password' })
+    }
+    
+    if(await bcrypt.compare(password, user.password))
+    {
+        const token = jwt.sign({ 
+            id: user._id, 
+            username: user.username 
+        }, JWT_SECRET)
+        return res.json({status: 'ok', data: token})
+        
+    }
+    res.json({status: 'error', error: 'Invalid username/password'})
 })
 
-app.listen(3000)
+
+
+app.post('/api/register', async (req, res) =>{
+
+    const { username, password : plainTextPassword} = req.body
+
+    if (!username || typeof username !== 'string')
+    {
+        return res.json({status: 'error', error: 'Invalid Username'})
+    }
+
+    if (plainTextPassword.length < 1) {
+		return res.json({
+			status: 'error',
+			error: 'Please provide a password.'
+		})
+	}
+
+    const password = await bcrypt.hash(plainTextPassword, 10)
+
+    try 
+    {
+       const response = await User.create({
+            username,
+            password
+        })
+        console.log('User created successfully: ', response)
+    } catch (error)
+    {
+        if (error.code === 11000) {
+		
+			return res.json({ status: 'error', error: 'Username already in use' })
+		}
+		throw error
+
+    }
+
+
+    res.json({status: 'ok'})
+})
+
+
+app.listen(9999, ()=> {
+    console.log('Server up at 9999')}
+    )
