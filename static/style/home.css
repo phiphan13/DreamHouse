@@ -1,0 +1,176 @@
+body
+{
+    font-family:poppins;
+    background-color: #221658;
+
+    scroll-behavior: smooth;
+    
+
+}
+/*Creates the nav bar where it doesn't move when scroll*/
+*
+{
+    box-sizing: border-box;
+   
+}
+
+ul
+{
+    list-style:none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#main
+{
+    width:100%;
+    height: 10vh;
+    position: relative;
+}
+
+nav
+{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    z-index: 1;
+    background-color: #7b66d6;
+    
+}
+.hey
+{
+	color: #221658;
+	font-size: 0.7rem;
+	border-bottom: 2px solid  #221658;
+    display: flex;
+    line-height: 40px;
+    margin: 3px;
+    padding: 0px 10px;
+    display:flex;
+    color:#221658;
+    letter-spacing:1px;
+
+}
+.hey:hover
+{
+    background-color:#221658;
+    color: #7b66d6;
+    box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+    transition: all ease 0.2s;
+}
+
+nav ul
+{
+    display: flex;
+}
+.logo img
+{
+    height: 45px;
+    border-radius: 50%;
+}
+nav ul li a
+{
+    height: 40px;
+    line-height: 43px;
+    margin: 3px;
+    padding: 0px 22px;
+    display:flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight:500;
+    color:#221658;
+    letter-spacing:1px;
+}
+
+nav ul li a:hover
+{
+	background-color:#221658;
+    color: #7b66d6;
+    box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+    transition: all ease 0.2s;
+}
+
+.homeLogo 
+{
+    text-align: center;
+}
+
+#welcome
+{
+    display: flex;
+    justify-content: space-around;
+	align-items: center;
+	width:90%;
+	margin:auto auto 50px auto;
+}
+.welcome-header{
+    text-align: center;
+}
+
+.welcome-container
+{
+    align-items: center;
+}
+
+.welcome-text-box
+{
+    width: 100%;
+	height: 400px;
+	background-color: #7b66d6;
+	border-radius: 20px;
+	box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+	display: flex;
+	margin: auto auto 20px auto;
+	position: relative;
+	justify-content: space-around;
+}
+
+.welcome-text
+{
+    text-align: center;
+    width:900px;
+	height: 200px;
+
+}
+
+.welcome-text h2
+{
+    color: #cea346;
+    font-family: 'Lakki Reddy', cursive;
+}
+
+.welcome-text p
+{
+    text-indent: 5%;
+	color:  #181818;
+	font-size: 85px;
+    font-family: 'Lakki Reddy', cursive;
+    color: white;
+	line-height: auto;
+	margin: 20px;
+}
+
+.footer
+{
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgba(232,232,232,0.5);
+    background-color:#FFFFFF;
+}
+
+footer p{
+	margin:15px 0px;
+	color:#5f5f5f;
+	font-size: 0.9rem;
+}
+
+
+
