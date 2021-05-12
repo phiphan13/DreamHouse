@@ -10,10 +10,12 @@ body
 
     font-family:poppins;
     background-color: #221658;
-	background-image: linear-gradient(to bottom right, #221658 20%, #32256d);
     
 }
-
+.homeLogo
+{
+	text-align: center;
+}
 .button-container
 {
     align-items: center;
