@@ -102,61 +102,77 @@ nav ul li a:hover
 {
     text-align: center;
 }
-
-#welcome
+.welcome
 {
     display: flex;
-    justify-content: space-around;
+	justify-content: space-around;
 	align-items: center;
 	width:90%;
 	margin:auto auto 50px auto;
 }
-.welcome-header{
-    text-align: center;
-}
+
 
 .welcome-container
 {
-    align-items: center;
+    margin-top: 30px;
 }
 
-.welcome-text-box
+
+.w-text-box
 {
-    width: 100%;
-	height: 400px;
+	width: 100%;
+	height: 330px;
 	background-color: #7b66d6;
 	border-radius: 20px;
 	box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
 	display: flex;
-	margin: auto auto 20px auto;
+	margin: -7 auto 20px auto;
 	position: relative;
 	justify-content: space-around;
-}
-
-.welcome-text
-{
     text-align: center;
-    width:900px;
-	height: 200px;
-
+}
+.w-text
+{
+	width:700px;
+	height: 500px;
 }
 
-.welcome-text h2
+.w-text p:nth-child(1)
 {
-    color: #cea346;
+	color:#d6b982;
+	font-weight: bold;
+	font-size: 26px;
+	line-height: 0px;
+	text-align: center;
     font-family: 'Lakki Reddy', cursive;
 }
 
-.welcome-text p
+.w-text p:nth-child(2)
 {
-    text-indent: 5%;
-	color:  #181818;
-	font-size: 85px;
-    font-family: 'Lakki Reddy', cursive;
-    color: white;
+	text-indent: 5%;
+	color:  #e8f0f1;
+	font-family: 'Lakki Reddy', cursive;
+	font-size: 70px;
 	line-height: auto;
 	margin: 20px;
+    
 }
+
+#welcome
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width:90%;
+	margin:auto auto 50px auto;
+}
+
+
+.welcome-container
+{
+	margin-top: 30px;
+}
+
 
 .footer
 {
@@ -167,8 +183,9 @@ nav ul li a:hover
 }
 
 footer p{
+    text-align: center;
 	margin:15px 0px;
-	color:#5f5f5f;
+	color:#7b66d6;
 	font-size: 0.9rem;
 }
 
