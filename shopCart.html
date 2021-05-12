@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shopping Cart</title>
+
+		<link rel='stylesheet' href='style/shopCart.css'>
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+		<script src="scripts/shopCart.js"async></script>
+	</head>
+
+	<body>
+		<section class="container content">
+            <h2 class="sectionHeader">Shopping cart</h2>
+            <div class="cartRow">
+                <span class="item cartHeader cartColumn">ITEM</span>
+                <span class="price cartHeader cartColumn">PRICE</span>
+                <span class="quantity cartHeader cartColumn">QUANTITY</span>
+            </div>
+            <div class="items">
+                <div class="cartRow">
+                    <div class="item cartColumn">
+                        <img class="itemImage" src="assets/ld.png" width="100" height="100">
+                        <span class="itemTitle">Lavender Dream</span>
+                    </div>
+                    <span class="price cartColumn">$4.50</span>
+                    <div class="quantity cartColumn">
+                        <input class="cartInput" type="number" value="1">
+                        <button class="btn btn-danger" type="button">REMOVE</button>
+                    </div>
+                </div>
+                <div class="cartRow">
+                    <div class="item cartColumn">
+                        <img class="itemImage" src="assets/df.png" width="100" height="100">
+                        <span class="itemTitle">Daydream Refresher</span>
+                    </div>
+                    <span class="price cartColumn">$4.50</span>
+                    <div class="quantity cartColumn">
+                        <input class="cartInput" type="number" value="2">
+                        <button class="btn btn-danger" type="button">REMOVE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="totalAmount">
+                <strong class="totalTitle">Total:</strong>
+                <span class="totalPrice">$0</span>
+            </div>
+            <button class="btn btn-primary btnPurchase" type="button">PURCHASE</button>
+        </section>
+	</body>
+	
+</html>
