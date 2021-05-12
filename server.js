@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost:27017/UserDB', {
 })
 
 const app = express()
-app.use('/', express.static(path.join(__dirname, 'static')))
+app.use('/', express.static(path.join(__dirname, '/')))
 app.use(bodyParser.json())
 
 app.post('/api/change-password', (req, res) =>{
