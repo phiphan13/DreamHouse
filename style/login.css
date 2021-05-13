@@ -43,7 +43,7 @@ form {
 	width: 100%;
 	max-width: 400px;
 	padding: 50px 30px;
-	background-image: linear-gradient(to bottom, #7b66d6, #53458f);
+	background-image: linear-gradient(to bottom, #7b66d6, #221658);
 	box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
 	border-radius: 16px;
 }
@@ -55,6 +55,7 @@ form h1 {
 	font-size: 36px;
 	text-transform: uppercase;
 	margin-bottom: 30px;
+	font-family: 'Lakki Reddy', cursive;
 }
 
 form label {
@@ -82,6 +83,7 @@ form input:not([type="submit"]) {
 	color: #222;
 	font-size: 18px;
 	font-weight: 300;
+	font-family: 'Lakki Reddy', cursive;
 }
 
 form input:not([type="submit"])::placeholder {
@@ -91,6 +93,7 @@ form input:not([type="submit"])::placeholder {
 form input:not([type="submit"]):focus, form input:not([type="submit"]):valid {
 	background-color: #fff;
 	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+	
 }
 
 form input[type="submit"] {
@@ -105,4 +108,5 @@ form input[type="submit"] {
 	font-size: 20px;
 	font-weight: 700;
 	cursor: pointer;
+	
 }
