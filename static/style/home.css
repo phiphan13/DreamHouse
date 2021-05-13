@@ -1,0 +1,194 @@
+body
+{
+    font-family:poppins;
+    background-color: #221658;
+
+    scroll-behavior: smooth;
+    
+
+}
+/*Creates the nav bar where it doesn't move when scroll*/
+*
+{
+    box-sizing: border-box;
+   
+}
+
+ul
+{
+    list-style:none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#main
+{
+    width:100%;
+    height: 10vh;
+    position: relative;
+}
+
+nav
+{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    z-index: 1;
+    background-color: #7b66d6;
+    
+}
+.hey
+{
+	color: #221658;
+	font-size: 0.7rem;
+	border-bottom: 2px solid  #221658;
+    display: flex;
+    line-height: 40px;
+    margin: 3px;
+    padding: 0px 10px;
+    display:flex;
+    color:#221658;
+    letter-spacing:1px;
+
+}
+.hey:hover
+{
+    background-color:#221658;
+    color: #7b66d6;
+    box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+    transition: all ease 0.2s;
+}
+
+
+nav ul
+{
+    display: flex;
+}
+.logo img
+{
+    height: 45px;
+    border-radius: 50%;
+}
+nav ul li a
+{
+    height: 40px;
+    line-height: 43px;
+    margin: 3px;
+    padding: 0px 22px;
+    display:flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight:500;
+    color:#221658;
+    letter-spacing:1px;
+}
+
+nav ul li a:hover
+{
+	background-color:#221658;
+    color: #7b66d6;
+    box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+    transition: all ease 0.2s;
+}
+
+.homeLogo 
+{
+    text-align: center;
+}
+.welcome
+{
+    display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width:90%;
+	margin:auto auto 50px auto;
+}
+
+
+.welcome-container
+{
+    margin-top: 30px;
+}
+
+
+.w-text-box
+{
+	width: 100%;
+	height: 330px;
+	background-image: linear-gradient(to bottom, #7b66d6, #221658);
+	border-radius: 20px;
+	box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+	display: flex;
+	margin: -7 auto 20px auto;
+	position: relative;
+	justify-content: space-around;
+    text-align: center;
+}
+.w-text
+{
+	width:700px;
+	height: 500px;
+}
+
+.w-text p:nth-child(1)
+{
+	color:#d6b982;
+	font-weight: bold;
+	font-size: 26px;
+	line-height: 0px;
+	text-align: center;
+    font-family: 'Lakki Reddy', cursive;
+}
+
+.w-text p:nth-child(2)
+{
+	text-indent: 5%;
+	color:  #e8f0f1;
+	font-family: 'Lakki Reddy', cursive;
+	font-size: 70px;
+	line-height: auto;
+	margin: 20px;
+    
+}
+
+#welcome
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width:90%;
+	margin:auto auto 50px auto;
+}
+
+
+.welcome-container
+{
+	margin-top: 30px;
+}
+
+
+.footer
+{
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgba(232,232,232,0.5);
+    background-color:#FFFFFF;
+}
+
+footer p{
+    text-align: center;
+	margin:15px 0px;
+	color:#7b66d6;
+	font-size: 0.9rem;
+}
+
+
+

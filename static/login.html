@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+		<link rel='stylesheet' href='style/login.css'>
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap" rel="stylesheet">
+	</head>
+	<body>
+	
+	<div id="login-register"> 
+
+		<div class="homeLogo"> <img src = "assets/DreamHouseLogo.png"/> </div>
+
+		<form id="login">
+			<h1>Sign-In</h1>
+			<div class="form-group">
+				<label>Username: </label>
+				<input type="text" autocomplete="off" id="username" placeholder="Please Enter Your Username" />	
+			</div>
+
+			<div class="form-group">
+				<label>Password:</label>
+				<input type="password" autocomplete="off" id="password" placeholder="Please Enter Your Password" />
+			</div>
+
+			<div>
+				<input type="submit" value="Login"/>
+			</div>
+			
+			<div id="button-container">
+				<a href="/index.html" class="register-button">No Account? Register Here!</a>
+			</div>
+		</form>
+
+	</div>
+
+		<script>
+			const form = document.getElementById('login')
+			form.addEventListener('submit', login)
+
+			async function login(event) {
+				event.preventDefault()
+				const username = document.getElementById('username').value
+				const password = document.getElementById('password').value
+
+				const result = await fetch('/api/login', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						username,
+						password
+					})
+				}).then((res) => res.json())
+
+				if (result.status === 'ok') {
+					// everythign went fine
+
+					document.location.href="home.html";
+					
+				} else {
+					alert(result.error)
+				}
+			}
+		</script>
+	</body>
+</html>

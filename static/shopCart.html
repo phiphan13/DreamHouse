@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap" rel="stylesheet">
+		<title>Shopping Cart</title>
+
+		<link rel='stylesheet' href='style/shopCart.css'>
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+		<script src="scripts/shopCart.js"async></script>
+	</head>
+
+	<body>
+
+        <section id="main">
+            <nav>
+                <a href ="/home.html" class = "logo"> <img src="assets/MenuLogo.png"/> </a>
+
+                <label class ="menu-icon" for ="menu-btn">
+                    <span class="nav-icon"></span>
+                    <a href="home.html"></a>
+
+                </label>
+                <!--Menu Page-->
+                <ul class ="menu-button">
+                    <li> <a href ="home.html" class="#main">Home</a></li>
+                    <li> <a href ="/menu.html" class="#main">Menu</a></li>
+                    <li> <a href ="/shopCart.html" class = "logo"> <img src="assets/shopping-cart.png"/> </a></li>
+                   
+                    
+                </ul>
+                <a href="login.html" class="hey">Logout</a>
+            </nav>
+        </section>
+
+    <section id="welcome"> 
+        <div class="welcome-text">
+            <div class="welcome-container">
+                <div class="w-text-box">
+                    <div class="w-text">
+                        <section class="container content">
+                                <h2 class="sectionHeader">Shopping cart</h2>
+                                <div class="cartRow">
+                                    <span class="item cartHeader cartColumn">ITEM</span>
+                                    <span class="price cartHeader cartColumn">PRICE</span>
+                                    <span class="quantity cartHeader cartColumn">QUANTITY</span>
+                                </div>
+                                <div class="items">
+                                    <div class="cartRow">
+                                        <div class="item cartColumn">
+                                            <img class="itemImage" src="assets/ld.png" width="100" height="100">
+                                            <span class="itemTitle">Lavender Dream</span>
+                                        </div>
+                                        <span class="price cartColumn">$4.50</span>
+                                        <div class="quantity cartColumn">
+                                            <input class="cartInput" type="number" value="1">
+                                            <button class="btn btn-danger" type="button">REMOVE</button>
+                                        </div>
+                                    </div>
+                                    <div class="cartRow">
+                                        <div class="item cartColumn">
+                                            <img class="itemImage" src="assets/df.png" width="100" height="100">
+                                            <span class="itemTitle">Daydream Refresher</span>
+                                        </div>
+                                        <span class="price cartColumn">$4.50</span>
+                                        <div class="quantity cartColumn">
+                                            <input class="cartInput" type="number" value="2">
+                                            <button class="btn btn-danger" type="button">REMOVE</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="totalAmount">
+                                    <strong class="totalTitle">Total:</strong>
+                                    <span class="totalPrice">$0</span>
+                                </div>
+                                <button class="btn btn-primary btnPurchase" type="button">PURCHASE</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	</body>
+	
+</html>

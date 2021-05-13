@@ -1,0 +1,112 @@
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body
+{
+
+    font-family:poppins;
+    background-color: #221658;
+    
+}
+.homeLogo
+{
+	text-align: center;
+}
+.button-container
+{
+    align-items: center;
+}
+
+#login-register
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.register-button
+{
+  
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+
+}
+form {
+	display: block;
+	width: 100%;
+	max-width: 400px;
+	padding: 50px 30px;
+	background-image: linear-gradient(to bottom, #7b66d6, #221658);
+	box-shadow: 18px 20px 10px rgba(0,0,0,0.2);
+	border-radius: 16px;
+}
+
+
+form h1 {
+    text-align: center;
+	color: #FFF;
+	font-size: 36px;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	font-family: 'Lakki Reddy', cursive;
+}
+
+form label {
+	display: block;
+	color:#eee;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+form input{
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+}
+
+form input:not([type="submit"]) {
+	display: block;
+	width: 100%;
+	padding: 15px;
+	border-radius: 8px;
+	background-color: rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	transition: 0.4s;
+	color: #222;
+	font-size: 18px;
+	font-weight: 300;
+	font-family: 'Lakki Reddy', cursive;
+}
+
+form input:not([type="submit"])::placeholder {
+	color: #CCC;
+}
+
+form input:not([type="submit"]):focus, form input:not([type="submit"]):valid {
+	background-color: #fff;
+	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+	
+}
+
+form input[type="submit"] {
+	display: block;
+	width: 100%;
+	padding: 15px;
+	border-radius: 8px;
+	background-color: #7b66d6;
+	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+	transition: 0.4s;
+	color: #FFF;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+	
+}
